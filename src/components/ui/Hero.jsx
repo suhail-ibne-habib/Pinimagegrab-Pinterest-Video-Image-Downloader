@@ -42,7 +42,7 @@ export function Hero({ onUrlSubmit, isLoading }) {
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
                         <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
                     </span>
-                    <span className="text-sm font-medium text-gray-300">V2.0 Now Supporting Pinterest Video</span>
+                    <span className="text-sm font-medium text-gray-300">Free Pinterest downloader. No account.</span>
                 </div>
 
                 <h1 className="hero-animate text-5xl md:text-7xl font-bold tracking-tight leading-tight">
@@ -51,7 +51,7 @@ export function Hero({ onUrlSubmit, isLoading }) {
                 </h1>
 
                 <p className="hero-animate text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-                    Save images, GIFs, and videos from Pinterest instantly. No watermarks, no login required. Just paste the link.
+                    PinImageGrab saves public Pinterest images, GIFs, and videos from a link. No account, and no watermark added by PinImageGrab.
                 </p>
 
                 <form onSubmit={handleSubmit} className="hero-animate relative max-w-2xl mx-auto mt-12 group">

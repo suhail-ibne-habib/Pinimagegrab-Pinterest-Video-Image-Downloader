@@ -57,7 +57,7 @@ export function Features() {
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(220,38,38,0.3),rgba(0,0,0,0))]" />
                     <img
                         src="/why.png"
-                        alt="Why Choose PinImageGrab"
+                        alt="PinImageGrab saving a Pinterest photo and video from a pin link"
                         className="absolute inset-0 w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-700 ease-out"
                     />
                 </div>

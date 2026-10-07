@@ -1,0 +1,92 @@
+"use client";
+
+import { useState } from "react";
+import { Navbar } from "@/components/ui/Navbar";
+import { Hero } from "@/components/ui/Hero";
+import { DownloadSection } from "@/components/ui/DownloadSection";
+import { HowItWorks } from "@/components/ui/HowItWorks";
+import { Features } from "@/components/ui/Features";
+import { FAQ } from "@/components/ui/FAQ";
+import { Guides } from "@/components/ui/Guides";
+import { Footer } from "@/components/ui/Footer";
+
+export function HomeClient() {
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleUrlSubmit = async (submittedUrl) => {
+    setIsLoading(true);
+    setError(null);
+    setData(null);
+
+    try {
+      const response = await fetch("/api/download", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ url: submittedUrl }),
+      });
+
+      let result;
+      const contentType = response.headers.get("content-type");
+      if (contentType && contentType.indexOf("application/json") !== -1) {
+        result = await response.json();
+      } else {
+        throw new Error(
+          "Server Error: The server returned an invalid response (Timeout or Blocked). Please try again."
+        );
+      }
+
+      if (!response.ok) {
+        throw new Error(result.error || "Failed to fetch data");
+      }
+
+      setData(result);
+
+      setTimeout(() => {
+        const element = document.getElementById("download-result");
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleReset = () => {
+    setData(null);
+    setError(null);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  return (
+    <main className="min-h-screen bg-[#0a0a0a] text-white overflow-hidden selection:bg-purple-500/30">
+      <Navbar />
+
+      <div className="flex flex-col gap-0">
+        <Hero onUrlSubmit={handleUrlSubmit} isLoading={isLoading} />
+
+        {error && (
+          <div className="text-red-500 text-center p-4 bg-red-500/10 rounded-xl max-w-lg mx-auto mt-4 border border-red-500/20">
+            {error}
+          </div>
+        )}
+
+        <DownloadSection data={data} onReset={handleReset} />
+
+        <HowItWorks />
+
+        <Features />
+
+        <FAQ />
+
+        <Guides />
+
+        <Footer />
+      </div>
+    </main>
+  );
+}

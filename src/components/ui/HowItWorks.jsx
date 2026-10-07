@@ -1,22 +1,5 @@
 import { Copy, Link, Check } from "lucide-react";
-
-const steps = [
-    {
-        icon: Copy,
-        title: "1. Copy URL",
-        description: "Find the Pin, photo, or carousel you want to save from Pinterest and copy its link."
-    },
-    {
-        icon: Link,
-        title: "2. Paste Link",
-        description: "Return to PinImageGrab and paste your link into the input field at the top of the page."
-    },
-    {
-        icon: Check,
-        title: "3. Download",
-        description: "Hit the download button and the media will be saved to your device in original quality."
-    }
-];
+import { howToSteps } from "@/lib/site";
 
 export function HowItWorks() {
     return (
@@ -36,9 +19,9 @@ export function HowItWorks() {
                         <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-red-500/20 to-orange-500/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                             <Copy className="w-7 h-7 text-red-400" />
                         </div>
-                        <h3 className="text-xl font-bold mb-3">1. Copy Pinterest URL</h3>
+                        <h3 className="text-xl font-bold mb-3">{howToSteps[0].name}</h3>
                         <p className="text-gray-400 leading-relaxed">
-                            Find the Pin, whether it's an image, video, or GIF, and copy its link from the address bar or share menu.
+                            {howToSteps[0].text}
                         </p>
                     </div>
 
@@ -46,9 +29,9 @@ export function HowItWorks() {
                         <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-red-500/20 to-orange-500/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                             <Link className="w-7 h-7 text-red-400" />
                         </div>
-                        <h3 className="text-xl font-bold mb-3">2. Paste Link</h3>
+                        <h3 className="text-xl font-bold mb-3">{howToSteps[1].name}</h3>
                         <p className="text-gray-400 leading-relaxed">
-                            Paste the link into the PinImageGrab input field above. Our system auto-detects the content type.
+                            {howToSteps[1].text}
                         </p>
                     </div>
 
@@ -56,9 +39,9 @@ export function HowItWorks() {
                         <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-red-500/20 to-orange-500/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                             <Check className="w-7 h-7 text-red-400" />
                         </div>
-                        <h3 className="text-xl font-bold mb-3">3. Download</h3>
+                        <h3 className="text-xl font-bold mb-3">{howToSteps[2].name}</h3>
                         <p className="text-gray-400 leading-relaxed">
-                            Click download and save the high-resolution image or video directly to your device.
+                            {howToSteps[2].text}
                         </p>
                     </div>
                 </div>

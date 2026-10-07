@@ -89,7 +89,7 @@ export function DownloadSection({ data, onReset }) {
                                 <div className="relative group">
                                     <img
                                         src={img}
-                                        alt={`Pinterest Content ${idx + 1}`}
+                                        alt={data.caption ? `${data.caption} — image ${idx + 1}` : `Pinterest pin image ${idx + 1}`}
                                         className="w-full h-auto object-contain max-h-[600px]"
                                         referrerPolicy="no-referrer"
                                         onError={(e) => {

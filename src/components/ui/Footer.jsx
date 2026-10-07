@@ -16,25 +16,27 @@ export function Footer() {
                             </span>
                         </Link>
                         <p className="text-gray-400 max-w-sm">
-                            The fastest way to download Pinterest content. Secure, anonymous, and high quality.
+                            A free Pinterest video and image downloader. Public pins only. Not affiliated with Pinterest.
                         </p>
                     </div>
 
                     <div>
                         <h4 className="font-bold text-white mb-6">Product</h4>
                         <ul className="space-y-4 text-gray-400">
-                            <li><a href="#features" className="hover:text-white transition-colors">Features</a></li>
-                            <li><a href="#how-it-works" className="hover:text-white transition-colors">How it Works</a></li>
-                            <li><a href="#faq" className="hover:text-white transition-colors">FAQ</a></li>
+                            <li><Link href="/#features" className="hover:text-white transition-colors">Features</Link></li>
+                            <li><Link href="/#how-it-works" className="hover:text-white transition-colors">How it Works</Link></li>
+                            <li><Link href="/#faq" className="hover:text-white transition-colors">FAQ</Link></li>
+                            <li><Link href="/pinterest-video-downloader" className="hover:text-white transition-colors">Video downloader</Link></li>
+                            <li><Link href="/pinterest-image-downloader" className="hover:text-white transition-colors">Image downloader</Link></li>
                         </ul>
                     </div>
 
                     <div>
                         <h4 className="font-bold text-white mb-6">Legal</h4>
                         <ul className="space-y-4 text-gray-400">
-                            <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">DMCA</a></li>
+                            <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+                            <li><Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link></li>
+                            <li><Link href="/dmca" className="hover:text-white transition-colors">DMCA</Link></li>
                         </ul>
                     </div>
                 </div>

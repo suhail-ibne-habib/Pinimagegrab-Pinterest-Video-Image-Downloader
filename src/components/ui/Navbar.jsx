@@ -1,11 +1,6 @@
 import Link from "next/link";
-import { Share2, Menu, X, Github, Database } from "lucide-react";
-import { useState } from "react";
-// Note: Lucide might not have a dedicated Pinterest icon, using standard text or generic share for now,
-// or import a custom SVG if needed. Let's use a red accent color.
 
 export function Navbar() {
-    const [isOpen, setIsOpen] = useState(false);
 
     return (
         <nav className="fixed top-0 w-full z-50 bg-black/50 backdrop-blur-lg border-b border-white/10">
@@ -21,11 +16,14 @@ export function Navbar() {
                 </a>
                 {/* Desktop Menu */}
                 <div className="hidden md:flex items-center gap-8">
-                    <Link href="#how-it-works" className="text-sm font-medium text-gray-400 hover:text-white transition-colors">
+                    <Link href="/#how-it-works" className="text-sm font-medium text-gray-400 hover:text-white transition-colors">
                         How it Works
                     </Link>
-                    <Link href="#features" className="text-sm font-medium text-gray-400 hover:text-white transition-colors">
+                    <Link href="/#features" className="text-sm font-medium text-gray-400 hover:text-white transition-colors">
                         Features
+                    </Link>
+                    <Link href="/#guides" className="text-sm font-medium text-gray-400 hover:text-white transition-colors">
+                        Guides
                     </Link>
                 </div>
             </div>

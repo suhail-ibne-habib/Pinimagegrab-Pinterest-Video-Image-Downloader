@@ -1,5 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { siteConfig } from "@/lib/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,56 +14,74 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: 'PinImageGrab - Pinterest Video & Image Downloader (4K/HD)',
-  description: 'Download high-quality Pinterest images, videos, and GIFs for free. No login required. Fast, anonymous, and supports 4K download.',
-  keywords: ['Pinterest Downloader', 'Pinterest Video Downloader', 'PinSaver', 'Pinterest to MP4', 'Save Pinterest Images', 'Pinterest GIF Downloader', 'High Quality Pinterest Downloader'],
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: siteConfig.title,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  applicationName: siteConfig.name,
+  keywords: siteConfig.keywords,
+  authors: [{ name: siteConfig.name, url: siteConfig.url }],
+  creator: siteConfig.name,
+  category: "utilities",
   alternates: {
-    canonical: 'https://pinimagegrab.com',
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
   openGraph: {
-    title: 'PinImageGrab - Pinterest Video & Image Downloader',
-    description: 'Download high-quality Pinterest images, videos, and GIFs for free. No login required.',
-    url: 'https://pinimagegrab.com',
-    siteName: 'PinImageGrab',
-    type: 'website',
+    type: "website",
+    locale: "en_US",
+    url: "/",
+    siteName: siteConfig.name,
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'PinImageGrab - Best Pinterest Downloader',
-    description: 'Download Pinterest videos and images in 4K/HD quality. Free and fast.',
+    card: "summary_large_image",
+  },
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  icons: {
+    icon: "/icon.svg",
   },
 };
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
-  name: 'PinImageGrab',
-  operatingSystem: 'Windows, macOS, Android, iOS',
-  applicationCategory: 'MultimediaApplication',
-  offers: {
-    '@type': 'Offer',
-    price: '0',
-    priceCurrency: 'USD',
-  },
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '4.9',
-    ratingCount: '1250',
+export const viewport = {
+  themeColor: "#0a0a0a",
+  width: "device-width",
+  initialScale: 1,
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: siteConfig.name,
+  url: siteConfig.url,
+  description: siteConfig.description,
+  publisher: {
+    "@type": "Organization",
+    name: siteConfig.name,
+    url: siteConfig.url,
   },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <JsonLd data={websiteJsonLd} />
         {children}
       </body>
     </html>

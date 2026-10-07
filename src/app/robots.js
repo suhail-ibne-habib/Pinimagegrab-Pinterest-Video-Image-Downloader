@@ -1,10 +1,13 @@
+import { siteConfig } from "@/lib/site";
+
 export default function robots() {
   return {
     rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: '/api/',
+      userAgent: "*",
+      allow: "/",
+      disallow: "/api/",
     },
-    sitemap: 'https://pinimagegrab.com/sitemap.xml',
-  }
+    sitemap: `${siteConfig.url}/sitemap.xml`,
+    host: siteConfig.url,
+  };
 }
