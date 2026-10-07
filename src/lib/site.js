@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "PinImageGrab",
-  url: "https://pinimagegrab.com",
+  url: "https://www.pinimagegrab.com",
   title: "Pinterest Video Downloader — Free HD Images & MP4 | PinImageGrab",
   description:
     "PinImageGrab is a free Pinterest video and image downloader. Paste a pin link and save the original photo, GIF, or MP4. No account, no watermark added by PinImageGrab.",

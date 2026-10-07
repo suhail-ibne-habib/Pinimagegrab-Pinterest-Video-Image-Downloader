@@ -2,13 +2,13 @@
 
 Free Pinterest video and image downloader. Paste a public pin link and save the original photo, GIF, or MP4. No account, and PinImageGrab does not add a watermark.
 
-**Live site:** [https://pinimagegrab.com](https://pinimagegrab.com)
+**Live site:** [https://www.pinimagegrab.com](https://www.pinimagegrab.com)
 
 PinImageGrab is an independent project. It is not affiliated with Pinterest. Pinterest is a trademark of Pinterest, Inc. Only download media you have the right to keep.
 
 ## Name
 
-The product name is **PinImageGrab**, the same words as the domain [pinimagegrab.com](https://pinimagegrab.com). The logo, the page title, and the address bar match, so visitors are not asked to trust a brand that the URL does not show.
+The product name is **PinImageGrab**, the same words as [www.pinimagegrab.com](https://www.pinimagegrab.com). The logo, the page title, and the address bar match, so visitors are not asked to trust a brand that the URL does not show.
 
 Page titles still lead with the search phrase, for example “Pinterest video downloader,” and end with PinImageGrab.
 
@@ -48,8 +48,8 @@ PinImageGrab is a website. It can show up in Google, Bing, and other web search 
 
 ### After you deploy
 
-1. Confirm [https://pinimagegrab.com](https://pinimagegrab.com) is the domain people should find. The canonical URL, Open Graph tags, `robots.txt`, and `sitemap.xml` all point there. The `vercel.app` hostname should not be the one you promote.
-2. In [Google Search Console](https://search.google.com/search-console), add the property `https://pinimagegrab.com`, verify it, and submit `https://pinimagegrab.com/sitemap.xml`.
+1. Confirm [https://www.pinimagegrab.com](https://www.pinimagegrab.com) is the domain people should find. Vercel redirects the non-www address there. The canonical URL, Open Graph tags, `robots.txt`, and `sitemap.xml` all point at the `www` host. The `vercel.app` hostname should not be the one you promote.
+2. In [Google Search Console](https://search.google.com/search-console), use the property `https://www.pinimagegrab.com`, verify it, and submit `sitemap.xml`.
 3. Use URL Inspection on the homepage and the three guide pages, then request indexing.
 4. Give it time. A new site in a crowded query (“Pinterest downloader”) often takes days or weeks, and it will not outrank established tools on the head term immediately. The guide pages target more specific searches.
 
@@ -65,7 +65,7 @@ PinImageGrab is a website. It can show up in Google, Bing, and other web search 
 
 ### If you also want YouTube
 
-Upload a short demo to your own YouTube channel: copy a public pin link, paste it into PinImageGrab, save the file. Put `https://pinimagegrab.com` in the video description and as a pinned comment. That video can appear in YouTube search. The website itself still will not.
+Upload a short demo to your own YouTube channel: copy a public pin link, paste it into PinImageGrab, save the file. Put `https://www.pinimagegrab.com` in the video description and as a pinned comment. That video can appear in YouTube search. The website itself still will not.
 
 When that video URL exists, it can be added to the page as a real `VideoObject`. Do not add a video schema until the video is public.
 
